@@ -16,12 +16,23 @@ onMounted(async () => {
         <logo-title class="mb-2" />
         <div class="divider" />
         <div class="menu">
+            
             <router-link to="/">
                 <i class="icon mdi mdi-home-outline" /> Home
+            </router-link>
+      
+            <router-link to="/categorias">
+                <i class="icon mdi mdi-minus-box-outline" /> Categoria
             </router-link>
             <router-link v-for="category in  categoryStore.categories " :key="category.id"
                 :to="`/produtos/categoria/${category.id}`">
                 <i class="icon mdi" :class="category.icon"></i> {{ category.name }}
+            </router-link>
+        </div>
+        <div class="divider" />
+        <div class="menu">
+            <router-link to="/login">
+                <i class="icon mdi mdi-account" /> Login
             </router-link>
         </div>
     </div>
